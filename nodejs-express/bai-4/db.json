@@ -2,7 +2,9 @@
   "users": [
     {
       "name": "Lê Nam Phương",
-      "id": "Pd002WRWy"
+      "id": "Pd002WRWy",
+      "email": "phuong123@gmail.com",
+      "password": "123"
     },
     {
       "name": "Lê Minh",
@@ -38,6 +40,16 @@
       "name": "faffa",
       "phone": "12313123123123",
       "id": "kLCFVx5hS"
+    },
+    {
+      "name": "dep trai",
+      "phone": "123123132",
+      "id": "i2yyEiCJx"
+    },
+    {
+      "name": "Lê Minh",
+      "phone": "0908012034",
+      "id": "2-zQkoduw"
     }
   ]
 }
