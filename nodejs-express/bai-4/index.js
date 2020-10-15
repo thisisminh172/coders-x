@@ -1,3 +1,6 @@
+//console.log(process.env);
+require('dotenv').config();
+console.log(process.env.SESSION_SECRET);
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -18,7 +21,8 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use(cookieParser());
+//app.use(cookieParser('fasfafasdrew123123'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 
 app.use(express.static('public'));
 
