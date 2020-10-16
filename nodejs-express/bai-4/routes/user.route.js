@@ -1,10 +1,14 @@
 const express = require('express');
 // const shortid = require('shortid');
 // const db = require('../db');
+var multer = require('multer');
 
 const controller = require('../controllers/user.controller');
 const validate = require('../validate/user.validate');
 const authMiddleware = require('../middleware/auth.middleware');
+
+var upload = multer({ dest: './public/uploads/' });
+
 const Router = express.Router();
 
 
@@ -25,7 +29,7 @@ Router.get('/',authMiddleware.requireAuth, controller.index);
 
 Router.get('/create', controller.create);
 //POST METHOD
-Router.post('/create',validate.postCreate, controller.postCreate);
+Router.post('/create',upload.single('avatar'),validate.postCreate, controller.postCreate);
 
 Router.get('/cookie', function(req,res,next){
     res.cookie('user-id',12345);
