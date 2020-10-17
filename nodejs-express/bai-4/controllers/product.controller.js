@@ -1,5 +1,6 @@
 const db = require('../db');
-const shortid = require('shortid');
+const Product = require('../models/product.model');
+// const shortid = require('shortid');
 
 module.exports.index = (req, res) => {
     var page = parseInt(req.query.page) || 1;// n
@@ -13,4 +14,9 @@ module.exports.index = (req, res) => {
     //products: db.get('products').value().slice(start,end) //kiểu phổ biến
     products: db.get('products').drop(drop).take(perPage).value()
 });
+    // Product.find().then(function(products){
+    //     res.render('products/index',{
+    //         products: products
+    //     });
+    // });
 };
