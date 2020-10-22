@@ -1,15 +1,17 @@
-//function context & bind
-//bind sẽ truyền nội dung của 1 object vào function gọi nó
-var mouse = {
-    name: 'Mickey',
-    sayHi: function(){
-        console.log('Hi, my name is ', this.name);
-    }
-};
-var cat = {
-    name: 'Tom'
+//array like object & arguments
+/*
+const names = ['Thanh','MInh','Trung'];
+for(let i = 0; i<names.length; i++){
+    console.log(names[i]);
+}
+*/
 
+const obj = {
+    0:'Thanh',
+    1: 'Trang',
+    2: 'Trung',
+    lenght : 3
 };
-// var say = mouse.sayHi.bind(mouse);
-var say = mouse.sayHi.bind(cat);
-say();
+for(let i = 0; i<obj.length; i++){
+    console.log(obj[i]);
+}
