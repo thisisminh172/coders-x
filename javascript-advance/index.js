@@ -1,17 +1,18 @@
-//array like object & arguments
-/*
-const names = ['Thanh','MInh','Trung'];
-for(let i = 0; i<names.length; i++){
-    console.log(names[i]);
+//method overriding
+class CoffeeMachine{
+    makeCoffee(){
+        console.log('making coffee...');
+    }
 }
-*/
 
-const obj = {
-    0:'Thanh',
-    1: 'Trang',
-    2: 'Trung',
-    lenght : 3
-};
-for(let i = 0; i<obj.length; i++){
-    console.log(obj[i]);
+class SpecialCoffeeMachine extends CoffeeMachine{
+    makeCoffee(cb){
+        console.log('makeing coffee and do something...');
+        cb();
+    }
 }
+
+const coffeeMachine = new SpecialCoffeeMachine();
+coffeeMachine.makeCoffee(() => {console.log('Call the boss...');});
+
+
